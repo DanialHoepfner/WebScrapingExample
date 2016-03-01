@@ -4,3 +4,4 @@ The .py file can be run from the start to gather and clean the data, at the end 
 Doing so requires none of the other files, however, step 1 in program can be skipped to just demonstrate the cleaning using fullset. 
 Similarly steps 1 and 2 can be skipped and just display the sample statistics using the fullsetclean file. 
 The files named arrayX are aggregated in step 1 to make the fullset data. 
+Note: code blocks and exploratory commands during cleaning have been removed.
