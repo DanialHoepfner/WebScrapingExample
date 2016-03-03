@@ -26,7 +26,7 @@ for tag in tags:
         count=count+1
 # List saved as numlist has all of the codes for urls for each organization page
 #Scraping the information
-sys.setrecursionlimit(1000000)
+sys.setrecursionlimit(1000000) #Probably unnecessary for example coded, higher limited needed to scrape full datset.
 j=list(range(101,9675,100)) #Information collected in blocks of 100 to keep website from signing out program and in case of issues with particular blocks
 j2=list(range(200,9675,100)) # j is lower limit, j2 upper limit
 for d in range(5,8): #iterates through the start and stop blocks defined above, small sample here only for example
@@ -117,7 +117,7 @@ for d in range(5,8): #iterates through the start and stop blocks defined above, 
                 fund='XZX'
                 print 'MISSING: fund for '+org[0]
             y=[numlist[i], org, abr, add, web, orgtype, langs, area, scope, cntrys, mdgs, yrest, yreg, mems, aff, fund]
-            data=n.vstack((data,y)) # appends each pages information to the slice
+            data=n.vstack((data,y)) # appends each pages' information to the slice
     svcode=(d+1)
     print svcode ##See iteration number
     n.save('array'+str(svcode), data) # Save slice of data
@@ -126,7 +126,7 @@ data=n.load('array6.npy')
 for i in range(7,9):
     array= 'array'+str(i)+'.npy'
     toappend=n.load(array)
-    toappend=toappend[1:] # Removes first row, which is variable names in all but first slice
+    toappend=toappend[1:] # Removes first row, which is variable names, in all but first slice
     data=n.vstack((data,toappend))
 n.save('fullset', data)
 #%%Step 2 Cleaning the data
@@ -728,6 +728,6 @@ for i in range(1,298):
 aver=float(partc)/float(count)
 print "Count: "+str(partc)
 print "Proportion: "+str(aver) 
-print "86 percent of groups working on the advancement of women in Nigeria(for example) work on outreach as an activity"
+print "86 percent of groups working on the advancement of women in Nigeria Chile and Uganda(for example) work on outreach as an activity"
 
 
